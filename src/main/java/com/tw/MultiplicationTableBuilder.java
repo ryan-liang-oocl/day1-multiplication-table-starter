@@ -6,12 +6,12 @@ public class MultiplicationTableBuilder {
         MultiplicationTableBuilder builder = new MultiplicationTableBuilder();
         int start = 2;
         int end = 4;
-        String multiplicationTable = builder.build(start, end);
+        String multiplicationTable = builder.createMultiplicationTable(start, end);
 
         System.out.println(multiplicationTable);
     }
 
-    public String build(int start, int end) {
+    public String createMultiplicationTable(int start, int end) {
         boolean isValid = isValid(start, end);
         if (!isValid) {
             return null;
