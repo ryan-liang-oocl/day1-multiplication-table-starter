@@ -34,16 +34,19 @@ public class MultiplicationTableBuilder {
     public String generateMultiplicationTable(int start, int end) {
         StringBuilder multiplicationTable = new StringBuilder();
         for (int i = start; i <= end; i++) {
-            for (int j = start; j <= i; j++) {
-                multiplicationTable.append(j).append("*").append(i).append("=").append(i * j);
-                if (j != i) {
-                    multiplicationTable.append(" ");
-                }
-            }
+            generateMultiplicationRow(multiplicationTable, start, i);
             multiplicationTable.append("\n");
-
         }
         return multiplicationTable.toString();
+    }
+
+    public void generateMultiplicationRow(StringBuilder multiplicationTable, int start, int end) {
+        for (int j = start; j <= end; j++) {
+            multiplicationTable.append(j).append("*").append(end).append("=").append(end * j);
+            if (j != end) {
+                multiplicationTable.append(" ");
+            }
+        }
     }
 
 
