@@ -23,4 +23,10 @@ public class MultiplicationTableBuilder {
         return start > 1 && end <= 1000;
     }
 
+    public boolean isValid(int start, int end) {
+        return isEndGreaterThanStart(start, end) && isStartAndEndInRange(start, end);
+    }
+
+
+
 }
