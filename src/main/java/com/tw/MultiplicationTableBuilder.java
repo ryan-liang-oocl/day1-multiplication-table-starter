@@ -14,4 +14,9 @@ public class MultiplicationTableBuilder {
     public String build(int start, int end) {
         return "";
     }
+
+    public boolean isEndGreaterThanStart(int start, int end) {
+        return end >= start;
+    }
+
 }
