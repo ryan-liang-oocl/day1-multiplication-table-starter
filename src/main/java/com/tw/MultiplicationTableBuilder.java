@@ -12,7 +12,11 @@ public class MultiplicationTableBuilder {
     }
 
     public String build(int start, int end) {
-        return "";
+        boolean isValid = isValid(start, end);
+        if (!isValid) {
+            return null;
+        }
+        return generateMultiplicationTable(start, end);
     }
 
     public boolean isEndGreaterThanStart(int start, int end) {
@@ -25,6 +29,21 @@ public class MultiplicationTableBuilder {
 
     public boolean isValid(int start, int end) {
         return isEndGreaterThanStart(start, end) && isStartAndEndInRange(start, end);
+    }
+
+    public String generateMultiplicationTable(int start, int end) {
+        StringBuilder multiplicationTable = new StringBuilder();
+        for (int i = start; i <= end; i++) {
+            for (int j = start; j <= i; j++) {
+                multiplicationTable.append(j).append("*").append(i).append("=").append(i * j);
+                if (j != i) {
+                    multiplicationTable.append(" ");
+                }
+            }
+            multiplicationTable.append("\n");
+
+        }
+        return multiplicationTable.toString();
     }
 
 
